@@ -8,7 +8,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.boolean :admin, :default => false
       t.text :image
-      t.boolean :volunteer, :default => false
+      t.boolean :responder, :default => false
+      # t.integer :requester_id
+      # t.integer :responder_id
 
       t.timestamps
     end
