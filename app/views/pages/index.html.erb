@@ -1,5 +1,7 @@
 <h1>Home Page</h1>
 
-<% if @user.present? %>
-<p><%= @user.name %></p>
+<p>Welcome to Help Delivered, a community led assistance solution in response to the Corona outbreak.</p>
+
+<% unless @user.present? %>
+<p><%= link_to "Sign up", new_user_path %> or <%= link_to "log in", login_path %> to volunteer or request help.</p>
 <% end %>

@@ -8,10 +8,18 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to users_role_path
     else
       render :new
     end
+  end
+
+  def role
+    @user = @current_user
+  end
+
+  def update_role
+
   end
 
   def show

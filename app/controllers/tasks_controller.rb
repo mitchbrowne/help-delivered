@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :check_for_login, :only => [:new, :create, :show]
+
   def index
     @tasks = Task.all
   end

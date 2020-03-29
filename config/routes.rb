@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  resources :users, :only => [:new, :create, :show, :edit, :update]
+  get '/users/role' => 'users#role'
+  post '/users/role' => 'users#update_role'
+
+  resources :users
   resources :tasks, :only => [:new, :create, :index, :show]
 end
