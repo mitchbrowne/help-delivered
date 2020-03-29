@@ -19,6 +19,19 @@ class UsersController < ApplicationController
     @tasks = @user.requesters.first.tasks
   end
 
+  def edit
+    @user = @current_user
+  end
+
+  def update
+    @user = @current_user
+    if @user.update user_params
+      redirect_to user_path(@user.id)
+    else
+      render :edit
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :phone, :postcode, :password, :password_confirmation)
