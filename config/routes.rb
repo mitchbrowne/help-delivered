@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :users, :only => [:new, :create, :show]
-  resources :request, :only => [:new, :create, :index, :show]
+  resources :tasks, :only => [:new, :create, :index, :show]
 end
