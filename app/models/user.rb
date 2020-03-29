@@ -4,6 +4,6 @@ class User < ApplicationRecord
   validates :name, :presence => true
 
   has_many :tasks
-  has_one :requester
-  has_one :responder
+  has_many :requesters
+  has_many :responders
 end

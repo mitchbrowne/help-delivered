@@ -1,4 +1,4 @@
 class Responder < ApplicationRecord
-  belongs_to :user, :optional => true, index: { unique: true }, foreign_key: true
+  belongs_to :user, :optional => true
   has_many :tasks
 end
