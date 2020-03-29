@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find params[:id]
+    @tasks = @user.requesters.first.tasks
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :phone, :postcode, :password, :password_confirmation)

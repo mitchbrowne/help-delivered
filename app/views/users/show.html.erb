@@ -1,0 +1,9 @@
+<h1>My Tasks</h1>
+
+<% @tasks.each do |task| %>
+
+  <h3><%= task.name %></h3>
+  <p><%= task.description %></p>
+  <p>Category: <%= task.category %></p>
+  <p>Urgency: <%= task.urgency %></p>
+<% end %>
